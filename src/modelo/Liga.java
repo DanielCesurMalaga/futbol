@@ -35,11 +35,6 @@ public class Liga {
     public ArrayList<Equipo> getEquipos() {
         return equipos;
     }
-
-    public boolean insertarEquipo(Equipo equipo) {
-        this.equipos.add(equipo);
-        return true;
-    }
     
     // Permite comparar objetos de tipo Liga
     public boolean equals(Liga liga) {
