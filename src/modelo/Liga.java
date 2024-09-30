@@ -38,4 +38,8 @@ public class Liga {
         this.equipos = equipos;
     }
     
+    // Permite comparar objetos de tipo Liga
+    public boolean equals(Liga liga) {
+        return (this.COD_LIGA == liga.COD_LIGA && this.nombre.equals(liga.nombre));
+    }
 }

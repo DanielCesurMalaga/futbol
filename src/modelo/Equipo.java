@@ -61,7 +61,7 @@ public class Equipo {
     }
 
     public boolean despedirJugador(Jugador jugador) {
-        
+        return true;
     }
 
     public int buscarJugador(Jugador jugador) {
@@ -89,6 +89,11 @@ public class Equipo {
             return contador;
         }
 
+    }
+
+    // Permite comparar dos objetos de tipo Equipo
+    public boolean equals(Equipo equipo) {
+        return (this.nombre.equals(equipo.nombre) && this.COD_EQUIPO == equipo.COD_EQUIPO);
     }
 
 }

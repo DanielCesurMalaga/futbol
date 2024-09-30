@@ -27,4 +27,9 @@ public abstract class Persona {
         this.nombre = nombre;
     }
 
+    // Permite comparar objetos de tipo Persona
+    public boolean equals(Persona persona) {
+        return (this.DNI == persona.DNI) && this.nombre.equals(persona.nombre);
+    }
+
 }
