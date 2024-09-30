@@ -45,6 +45,23 @@ public class Equipo {
     public Entrenador getEntrenador() {
         return entrenador;
     }
+    public boolean contratarEntrenador(Entrenador entrenador){
+        if (this.entrenador!=null) {
+            return false;
+            
+        }
+        this.entrenador=entrenador;
+        return true;
+    }
+
+    public boolean despedirEntrenador(Entrenador entrenador){
+       if (this.entrenador!= null){
+        this.entrenador=null;
+        return true;
+       }
+
+
+    }
 
     public void setEntrenador(Entrenador entrenador) {
         this.entrenador = entrenador;
@@ -61,7 +78,25 @@ public class Equipo {
     }
 
     public boolean despedirJugador(Jugador jugador) {
+        if (numJugadores==0){
+            return false;
+        } 
+        int posicionJugador=buscarJugador(jugador);
+        if(buscarJugador(jugador)<0){
+            return false;
+        }
+        jugadores[buscarJugador(jugador)]=null;
+
+        for (int contador=posicionJugador + 1; contador< numJugadores;contador++){
+            jugadores[contador-1]=jugadores[contador];
+        }
+        jugadores[numJugadores-1]=null;
+        numJugadores--;
         return true;
+
+
+
+
     }
 
     public int buscarJugador(Jugador jugador) {

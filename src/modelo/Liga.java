@@ -6,12 +6,14 @@ public class Liga {
     private static int sigCodLiga=0;
     private final int COD_LIGA;
     private ArrayList<Equipo> equipos;
+    private final int NUM_EQUIPOS;
 
-    public Liga(String nombre){
+    public Liga(String nombre,int numEquipos){
         this.nombre = nombre;
         COD_LIGA = sigCodLiga;
         sigCodLiga++;
         equipos = new ArrayList<Equipo>();
+        NUM_EQUIPOS=numEquipos;
     }
 
     public String getNombre() {
@@ -34,8 +36,9 @@ public class Liga {
         return equipos;
     }
 
-    public void setEquipos(ArrayList<Equipo> equipos) {
-        this.equipos = equipos;
+    public boolean insertarEquipo(Equipo equipo) {
+        this.equipos.add(equipo);
+        return true;
     }
     
     // Permite comparar objetos de tipo Liga
