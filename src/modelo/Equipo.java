@@ -1,6 +1,7 @@
 package modelo;
 
 public class Equipo {
+
     private static int sigCodEquipo = 0;
 
     private static final int MAX_JUGADORES = 20;
@@ -46,8 +47,51 @@ public class Equipo {
         return entrenador;
     }
 
-    public void setEntrenador(Entrenador entrenador) {
+    public boolean setEntrenador(Entrenador entrenador) {
+        if (this.entrenador != null) {
+            return false;
+
+        }
         this.entrenador = entrenador;
+        return true;
+    }
+
+    public boolean eliminarEntrenador(Entrenador entrenador) {
+        if (this.entrenador == null) {
+            return false;
+
+        } else {
+
+            this.entrenador = null;
+            return true;
+        }
+
+    }
+
+    public int buscarJugador(Jugador jugador){
+        return Util.search(jugador, jugadores, numJugadores);
+    }
+
+    public boolean añadirJugador(Jugador jugador){
+
+        if(Util.add(jugador, jugadores, numJugadores)){
+            numJugadores++;
+            return true;
+
+        }else{
+            return false;
+        }
+    }
+
+    public boolean eliminarJugador(Jugador jugador){
+
+        if(Util.eliminate(jugador, jugadores, numJugadores)){
+            numJugadores--;
+            return true;
+
+        }else{
+            return false;
+        }
     }
 
     // Permite comparar dos objetos de tipo Equipo
