@@ -46,11 +46,25 @@ public class Equipo {
         return entrenador;
     }
 
-    public void setEntrenador(Entrenador entrenador) {
+    public boolean contratarEntrenador(Entrenador entrenador) {
+        if (this.entrenador != null) {
+            return false;
+        }
         this.entrenador = entrenador;
+        return true;
     }
 
-    public boolean insertarJugador(Jugador jugador) {
+    public boolean despedirEntrenador(Entrenador entrenador) {
+        if (this.entrenador != null) {
+            this.entrenador = null;
+            return true;
+
+        }
+        return false;
+
+    }
+
+    public boolean contratarJugador(Jugador jugador) {
         if (numJugadores >= MAX_JUGADORES) {
             return false;
         } else {
@@ -61,7 +75,25 @@ public class Equipo {
     }
 
     public boolean despedirJugador(Jugador jugador) {
-        
+
+        if (numJugadores == 0) {
+            return false;
+        }
+        int posicionJugador = buscarJugador(jugador);
+        if (posicionJugador < 0) {
+            return false;
+        }
+
+        jugadores[posicionJugador] = null;
+
+        for (int i = posicionJugador + 1; i < numJugadores; i++) {
+
+            jugadores[i - 1] = jugadores[i];
+        }
+
+        jugadores[numJugadores - 1] = null;
+        numJugadores--;
+        return true;
     }
 
     public int buscarJugador(Jugador jugador) {
@@ -76,11 +108,11 @@ public class Equipo {
          * }
          * return posicion;
          */
-        if (numJugadores==0){
+        if (numJugadores == 0) {
             return -1;
         }
         int contador = 0;
-        while ((contador < numJugadores) && (jugadores[contador].getDNI() != jugador.getDNI()) ) {
+        while ((contador < numJugadores) && (jugadores[contador].getDNI() != jugador.getDNI())) {
             contador++;
         }
         if (contador >= numJugadores) {
