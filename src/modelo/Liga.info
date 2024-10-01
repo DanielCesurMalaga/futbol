@@ -1,0 +1,27 @@
+Liga
+    //variables
+    private static int sigCodLiga = 0;
+    private final int COD_LIGA;
+
+    private String nombre;
+    private final int NUM_EQUIPOS;
+
+    private ArrayList<Equipo> equipos;
+
+    //metodos
+    public Liga(String nombre, int numEquipos)
+
+    public String getNombre()
+    public void setNombre(String nombre) 
+    public static int getSigCodLiga() 
+    public int getCOD_LIGA() 
+    public ArrayList<Equipo> getEquipos() 
+
+    public void insertarEquipo(Equipo equipo) 
+    public void eliminarEquipo(Equipo equipo)
+    public int buscarEquipo(Equipo equipo)
+
+    public boolean equals(Liga liga)
+
+
+

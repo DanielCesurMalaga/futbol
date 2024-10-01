@@ -1,0 +1,16 @@
+Persona
+    //variables
+    private static int sigDNI=0;
+    private final int DNI;
+    private String nombre;
+
+    //metodos
+    public Persona(String nombre)
+
+    public static int getSigDNI()
+    public int getDNI() 
+    public String getNombre() 
+    public void setNombre(String nombre)
+
+    public boolean equals(Persona persona)
+

@@ -1,6 +1,7 @@
 package modelo;
 
 public class Equipo {
+
     private static int sigCodEquipo = 0;
 
     private static final int MAX_JUGADORES = 20;
@@ -45,85 +46,57 @@ public class Equipo {
     public Entrenador getEntrenador() {
         return entrenador;
     }
-    public boolean contratarEntrenador(Entrenador entrenador){
-        if (this.entrenador!=null) {
+
+    public boolean setEntrenador(Entrenador entrenador) {
+        if (this.entrenador != null) {
             return false;
-            
+
         }
-        this.entrenador=entrenador;
-        return true;
-    }
-
-    public boolean despedirEntrenador(Entrenador entrenador){
-       if (this.entrenador!= null){
-        this.entrenador=null;
-        return true;
-       }
-
-
-    }
-
-    public void setEntrenador(Entrenador entrenador) {
         this.entrenador = entrenador;
+        return true;
     }
 
-    public boolean insertarJugador(Jugador jugador) {
-        if (numJugadores >= MAX_JUGADORES) {
+    public boolean eliminarEntrenador(Entrenador entrenador) {
+        if (this.entrenador == null) {
             return false;
+
         } else {
-            numJugadores++;
-            jugadores[numJugadores - 1] = jugador;
+
+            this.entrenador = null;
             return true;
         }
-    }
-
-    public boolean despedirJugador(Jugador jugador) {
-        if (numJugadores==0){
-            return false;
-        } 
-        int posicionJugador=buscarJugador(jugador);
-        if(buscarJugador(jugador)<0){
-            return false;
-        }
-        jugadores[buscarJugador(jugador)]=null;
-
-        for (int contador=posicionJugador + 1; contador< numJugadores;contador++){
-            jugadores[contador-1]=jugadores[contador];
-        }
-        jugadores[numJugadores-1]=null;
-        numJugadores--;
-        return true;
-
-
-
 
     }
 
     public int buscarJugador(Jugador jugador) {
+        return Util.search(jugador, jugadores, numJugadores);
+    }
 
-        /*
-         * INEFICIENTE
-         * int posicion = -1;
-         * for (int i = 0; i < numJugadores; i++) {
-         * if (jugadores[i].getDNI() == jugador.getDNI()) {
-         * posicion = i;
-         * }
-         * }
-         * return posicion;
-         */
-        if (numJugadores==0){
-            return -1;
-        }
-        int contador = 0;
-        while ((contador < numJugadores) && (jugadores[contador].getDNI() != jugador.getDNI()) ) {
-            contador++;
-        }
-        if (contador >= numJugadores) {
-            return -1;
+    public boolean añadirJugador(Jugador jugador) {
+
+        if (Util.add(jugador, jugadores, numJugadores)) {
+            numJugadores++;
+            return true;
+
         } else {
-            return contador;
+            return false;
         }
+    }
 
+    public boolean eliminarJugador(Jugador jugador) {
+
+        if (Util.eliminate(jugador, jugadores, numJugadores)) {
+            numJugadores--;
+            return true;
+
+        } else {
+            return false;
+        }
+    }
+
+    // Permite comparar dos objetos de tipo Equipo
+    public boolean equals(Equipo equipo) {
+        return (this.nombre.equals(equipo.nombre));
     }
 
 }

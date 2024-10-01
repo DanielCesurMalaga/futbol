@@ -1,7 +1,8 @@
 package modelo;
+
 public abstract class Persona {
 
-    private static int sigDNI=0;
+    private static int sigDNI = 0;
     private final int DNI;
     private String nombre;
 
@@ -25,6 +26,11 @@ public abstract class Persona {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    // Permite comparar objetos de tipo Persona
+    public boolean equals(Persona persona) {
+        return (this.DNI == persona.DNI) && this.nombre.equals(persona.nombre);
     }
 
 }
