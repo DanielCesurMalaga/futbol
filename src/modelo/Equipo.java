@@ -45,22 +45,22 @@ public class Equipo {
     public Entrenador getEntrenador() {
         return entrenador;
     }
-    public boolean contratarEntrenador(Entrenador entrenador){
-        if (this.entrenador!=null) {
+
+    public boolean contratarEntrenador(Entrenador entrenador) {
+        if (this.entrenador != null) {
             return false;
-            
+
         }
-        this.entrenador=entrenador;
+        this.entrenador = entrenador;
         return true;
     }
 
-    public boolean despedirEntrenador(Entrenador entrenador){
-       if (this.entrenador!= null){
-        this.entrenador=null;
-        return true;
-       }
-
-
+    public boolean despedirEntrenador(Entrenador entrenador) {
+        if (this.entrenador != null) {
+            this.entrenador = null;
+            return true;
+        }
+        return false;
     }
 
     public void setEntrenador(Entrenador entrenador) {
@@ -78,24 +78,21 @@ public class Equipo {
     }
 
     public boolean despedirJugador(Jugador jugador) {
-        if (numJugadores==0){
-            return false;
-        } 
-        int posicionJugador=buscarJugador(jugador);
-        if(buscarJugador(jugador)<0){
+        if (numJugadores == 0) {
             return false;
         }
-        jugadores[buscarJugador(jugador)]=null;
+        int posicionJugador = buscarJugador(jugador);
+        if (buscarJugador(jugador) < 0) {
+            return false;
+        }
+        jugadores[buscarJugador(jugador)] = null;
 
-        for (int contador=posicionJugador + 1; contador< numJugadores;contador++){
-            jugadores[contador-1]=jugadores[contador];
+        for (int contador = posicionJugador + 1; contador < numJugadores; contador++) {
+            jugadores[contador - 1] = jugadores[contador];
         }
-        jugadores[numJugadores-1]=null;
+        jugadores[numJugadores - 1] = null;
         numJugadores--;
         return true;
-
-
-
 
     }
 
@@ -111,11 +108,11 @@ public class Equipo {
          * }
          * return posicion;
          */
-        if (numJugadores==0){
+        if (numJugadores == 0) {
             return -1;
         }
         int contador = 0;
-        while ((contador < numJugadores) && (jugadores[contador].getDNI() != jugador.getDNI()) ) {
+        while ((contador < numJugadores) && (jugadores[contador].getDNI() != jugador.getDNI())) {
             contador++;
         }
         if (contador >= numJugadores) {
