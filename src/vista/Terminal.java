@@ -7,9 +7,9 @@ import modelo.Liga;
 
 public class Terminal {
 
-      private static ArrayList<Liga> Ligas;
+    private static ArrayList<Liga> Ligas;
 
-    static Scanner lector;
+    protected static Scanner lector = new Scanner(System.in);
 
     public void preguntar() {// pregunto por pantalla que hago
         int leido = 0;

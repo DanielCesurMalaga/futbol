@@ -1,9 +1,9 @@
 package vista;
 
 import modelo.Entrenador;
+import modelo.Equipo;
 import modelo.Jugador;
 import modelo.Liga;
-import modelo.Equipo;
 
 public class Pedir {
     
@@ -12,11 +12,11 @@ public class Pedir {
         int numEquipos;
 
         System.out.println("Introduce el nombre de la liga");
-        nombre = lector.nextLine();
+        nombre = Terminal.lector.nextLine();
 
         System.out.println("Introduce el maximo numero de equipos");
-        numEquipos = lector.nextInt();
-        lector.nextLine();
+        numEquipos = Terminal.lector.nextInt();
+        Terminal.lector.nextLine();
 
         return new Liga(nombre, numEquipos);
     }
@@ -25,7 +25,7 @@ public class Pedir {
         String nombre;
 
         System.out.println("Introduce el nombre del equipo");
-        nombre = lector.nextLine();
+        nombre = Terminal.lector.nextLine();
 
         return new Equipo(nombre);
     }
@@ -35,11 +35,11 @@ public class Pedir {
         int juego;
 
         System.out.println("Introduce el nombre del jugador");
-        nombre = lector.nextLine();
+        nombre = Terminal.lector.nextLine();
 
         System.out.println("Introduce el nivel de juego");
-        juego = lector.nextInt();
-        lector.nextLine();
+        juego = Terminal.lector.nextInt();
+        Terminal.lector.nextLine();
 
         return new Jugador(nombre, juego);
     }
@@ -49,11 +49,11 @@ public class Pedir {
         int tactica;
 
         System.out.println("Introduce el nombre del jugador");
-        nombre = lector.nextLine();
+        nombre = Terminal.lector.nextLine();
 
         System.out.println("Introduce el nivel de tactica");
-        tactica = lector.nextInt();
-        lector.nextLine();
+        tactica = Terminal.lector.nextInt();
+        Terminal.lector.nextLine();
 
         return new Entrenador(nombre, tactica);
     }

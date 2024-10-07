@@ -10,8 +10,8 @@ public class Mostrar {
         mostrarDescripcion();// muestra el menu
 
         do {
-            leido = lector.nextInt();
-            lector.nextLine();
+            leido = Terminal.lector.nextInt();
+            Terminal.lector.nextLine();
 
         if (leido == 1) {
             mostrarLigas();

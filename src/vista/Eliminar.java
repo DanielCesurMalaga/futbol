@@ -1,9 +1,11 @@
 package vista;
 
-import futbol.src.modelo.Entrenador;
-import futbol.src.modelo.Equipo;
-import futbol.src.modelo.Jugador;
-import futbol.src.modelo.Liga;
+import modelo.Entrenador;
+import modelo.Equipo;
+import modelo.Jugador;
+import modelo.Liga;
+import static vista.Pedir.*;
+
 
 public class Eliminar {
 
@@ -15,8 +17,8 @@ public class Eliminar {
         eliminarDescripcion();// muestra el menu
 
         do {
-            leido = lector.nextInt();
-            lector.nextLine();
+            leido = Terminal.lector.nextInt();
+            Terminal.lector.nextLine();
 
         if (leido == 1) {
             eliminarLiga();
