@@ -17,11 +17,11 @@ public abstract class Persona {
     }
 
     public int getDNI() {
-        return DNI;
+        return this.DNI;
     }
 
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
 
     public void setNombre(String nombre) {

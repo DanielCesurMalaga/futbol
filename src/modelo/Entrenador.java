@@ -10,7 +10,7 @@ public class Entrenador extends Persona {
     }
 
     public int getTactica() {
-        return tactica;
+        return this.tactica;
     }
 
     public void setTactica(int tactica) {

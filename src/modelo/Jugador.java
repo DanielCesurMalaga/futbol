@@ -10,7 +10,7 @@ public class Jugador extends Persona {
     }
 
     public int getJuego() {
-        return juego;
+        return this.juego;
     }
 
     public void setJuego(int juego) {

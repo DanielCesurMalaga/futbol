@@ -12,14 +12,14 @@ public class Liga {
 
     public Liga(String nombre, int numEquipos) {
         this.nombre = nombre;
-        COD_LIGA = sigCodLiga;
+        this.COD_LIGA = sigCodLiga;
         sigCodLiga++;
-        equipos = new ArrayList<Equipo>();
-        NUM_EQUIPOS = numEquipos;
+        this.equipos = new ArrayList<Equipo>();
+        this.NUM_EQUIPOS = numEquipos;
     }
 
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
 
     public void setNombre(String nombre) {
@@ -31,11 +31,11 @@ public class Liga {
     }
 
     public int getCOD_LIGA() {
-        return COD_LIGA;
+        return this.COD_LIGA;
     }
 
     public ArrayList<Equipo> getEquipos() {
-        return equipos;
+        return this.equipos;
     }
 
     public void insertarEquipo(Equipo equipo) {

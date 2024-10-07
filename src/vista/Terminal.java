@@ -7,7 +7,7 @@ import modelo.Liga;
 
 public class Terminal {
 
-    private static ArrayList<Liga> Ligas;
+    private static ArrayList<Liga> ligas;
 
     protected static Scanner lector = new Scanner(System.in);
 

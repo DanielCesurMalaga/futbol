@@ -1,9 +1,6 @@
 package vista;
 
-import modelo.Entrenador;
-import modelo.Equipo;
-import modelo.Jugador;
-import modelo.Liga;
+import modelo.*;
 
 public class Pedir {
     

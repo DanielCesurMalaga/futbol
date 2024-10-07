@@ -17,10 +17,10 @@ public class Equipo {
 
     public Equipo(String nombre) {
         this.nombre = nombre;
-        COD_EQUIPO = sigCodEquipo;
+        this.COD_EQUIPO = sigCodEquipo;
         sigCodEquipo++;
-        jugadores = new Jugador[MAX_JUGADORES];
-        numJugadores = 0;
+        this.jugadores = new Jugador[MAX_JUGADORES];
+        this.numJugadores = 0;
     }
 
     public String getNombre() {
