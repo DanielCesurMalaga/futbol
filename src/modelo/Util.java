@@ -24,6 +24,7 @@ public class Util {
         int cont = 0;
         int found = -1;
 
+
         while ((found == -1) && (cont < nElements)) {
 
             if (objects[cont].equals(object)) {
@@ -54,6 +55,7 @@ public class Util {
         if (position != -1) {
             objects[nElements] = object;
 
+
         } else {
             return false;
         }
@@ -74,6 +76,7 @@ public class Util {
             for (; position < nElements - 1; position++) {
                 objects[position] = objects[position + 1];
             }
+
             objects[nElements - 1] = null;
 
         } else {
