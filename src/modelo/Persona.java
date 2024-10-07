@@ -1,7 +1,8 @@
 package modelo;
+
 public abstract class Persona {
 
-    private static int sigDNI=0;
+    private static int sigDNI = 0;
     private final int DNI;
     private String nombre;
 

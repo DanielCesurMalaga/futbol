@@ -1,0 +1,31 @@
+Equipo
+    //variables
+    private static int sigCodEquipo = 0;
+    private final int COD_EQUIPO;
+
+    private static final int MAX_JUGADORES = 20;
+
+    private String nombre;
+    private Entrenador entrenador;
+    private int numJugadores;
+    
+    private Jugador[] jugadores;
+
+    //metodos
+    public Equipo(String nombre) 
+
+    public String getNombre() 
+    public void setNombre(String nombre) 
+    public int getCOD_EQUIPO() 
+    public static int getSigCodEquipo() 
+    public Jugador[] getJugadores() 
+    public Entrenador getEntrenador() 
+
+    public boolean setEntrenador(Entrenador entrenador)
+    public boolean eliminarEntrenador(Entrenador entrenador) 
+
+    public int buscarJugador(Jugador jugador)
+    public boolean añadirJugador(Jugador jugador)
+    public boolean eliminarJugador(Jugador jugador)
+
+    public boolean equals(Equipo equipo)

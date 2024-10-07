@@ -2,7 +2,8 @@ package modelo;
 
 public class Util {
 
-    // IMPORTANTE, Estos métodos utilizarán "public boolean equals(TuObjeto tuObjeto)"
+    // IMPORTANTE, Estos métodos utilizarán "public boolean equals(TuObjeto
+    // tuObjeto)"
     // Si no esta implementado en tu clase para realizar las comparaciones puede
     // tener un comportamiento que no es el esperado. Por tanto implementalo
     // Este método deverá devolver TRUE cuando tu consideres que dos objetos de tu
@@ -12,22 +13,23 @@ public class Util {
     // nElements debe ser el numero total de elementos que hay en al lista
     // NO comprueba que el tipo que pasas es el adecuado para ese array
 
-
     // Este método recorrera el array comparando el objeto de cada posición con
     // el que le pases por parámetro haciendo uso del equals que hayas implementado
     //
-    // Devolverá un número >=0 indicando la posicion del array en la que se encuentra
+    // Devolverá un número >=0 indicando la posicion del array en la que se
+    // encuentra
     // Devolverá -1 si no lo encontró
 
     public static int search(Object object, Object[] objects, int nElements) {
         int cont = 0;
         int found = -1;
 
-        while ( (found == -1) && (cont < nElements) ) {
+
+        while ((found == -1) && (cont < nElements)) {
 
             if (objects[cont].equals(object)) {
                 found = 1;
-                
+
             } else {
                 cont++;
             }
@@ -39,7 +41,7 @@ public class Util {
 
         return cont;
     }
-    
+
     // Este es un método genérico que añade un objeto a un array de objects
     // Lo añade en la última posicion que tenga libre
     // nElements debe ser el numero total de elementos que hay en al lista
@@ -53,7 +55,8 @@ public class Util {
         if (position != -1) {
             objects[nElements] = object;
 
-        }else{
+
+        } else {
             return false;
         }
 
@@ -73,7 +76,8 @@ public class Util {
             for (; position < nElements - 1; position++) {
                 objects[position] = objects[position + 1];
             }
-            objects[nElements-1]=null;
+
+            objects[nElements - 1] = null;
 
         } else {
             return false;

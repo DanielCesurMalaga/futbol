@@ -1,4 +1,5 @@
 package modelo;
+
 public class Jugador extends Persona {
 
     private int juego;
@@ -15,5 +16,5 @@ public class Jugador extends Persona {
     public void setJuego(int juego) {
         this.juego = juego;
     }
-    
+
 }

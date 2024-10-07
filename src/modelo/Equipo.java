@@ -68,35 +68,35 @@ public class Equipo {
 
     }
 
-    public int buscarJugador(Jugador jugador){
+    public int buscarJugador(Jugador jugador) {
         return Util.search(jugador, jugadores, numJugadores);
     }
 
-    public boolean añadirJugador(Jugador jugador){
+    public boolean añadirJugador(Jugador jugador) {
 
-        if(Util.add(jugador, jugadores, numJugadores)){
+        if (Util.add(jugador, jugadores, numJugadores)) {
             numJugadores++;
             return true;
 
-        }else{
+        } else {
             return false;
         }
     }
 
-    public boolean eliminarJugador(Jugador jugador){
+    public boolean eliminarJugador(Jugador jugador) {
 
-        if(Util.eliminate(jugador, jugadores, numJugadores)){
+        if (Util.eliminate(jugador, jugadores, numJugadores)) {
             numJugadores--;
             return true;
 
-        }else{
+        } else {
             return false;
         }
     }
 
     // Permite comparar dos objetos de tipo Equipo
     public boolean equals(Equipo equipo) {
-        return (this.nombre.equals(equipo.nombre) && this.COD_EQUIPO == equipo.COD_EQUIPO);
+        return (this.nombre.equals(equipo.nombre));
     }
 
 }

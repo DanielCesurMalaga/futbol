@@ -42,11 +42,11 @@ public class Liga {
         this.equipos.add(equipo);
     }
 
-    public void deleteEquipo(Equipo equipo) {
+    public void eliminarEquipo(Equipo equipo) {
         boolean found = false;
         int cont = 0;
-        final int TAM  = this.equipos.size();
-        
+        final int TAM = this.equipos.size();
+
         while (!found && cont < TAM) {
             if (this.equipos.get(cont).equals(equipo)) {
                 this.equipos.remove(cont);
@@ -58,12 +58,12 @@ public class Liga {
         }
     }
 
-    public int buscarEquipo(Equipo equipo){
+    public int buscarEquipo(Equipo equipo) {
 
         boolean found = false;
         int cont = 0;
-        final int TAM  = this.equipos.size();
-        
+        final int TAM = this.equipos.size();
+
         while (!found && cont < TAM) {
             if (this.equipos.get(cont).equals(equipo)) {
                 found = true;
@@ -73,10 +73,10 @@ public class Liga {
             }
         }
 
-        if(!found){
+        if (!found) {
             return -1;
 
-        } else{
+        } else {
             return cont;
         }
 
