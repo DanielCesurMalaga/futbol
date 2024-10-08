@@ -56,11 +56,12 @@ public class Equipo {
     }
 
     public boolean despedirEntrenador(Entrenador entrenador) {
-        if (this.entrenador != null) {
+        if ((this.entrenador != null) && (this.entrenador.getDNI() == entrenador.getDNI())) {
             this.entrenador = null;
             return true;
         }
         return false;
+
     }
 
     public void setEntrenador(Entrenador entrenador) {

@@ -79,7 +79,7 @@ public class Inicio {
     public boolean crear(int elemento) {
         switch (elemento) {
             case 1: // jugador
-                
+                System.out.println();
                 break;
             case 2: // entrenador
 
